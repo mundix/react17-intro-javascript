@@ -1,45 +1,13 @@
-// Async - Await
+// Operador Ternario
 import './css/index.css';
 
-// const getImagenPromesa = () => new Promise( resolve => resolve('http://aslkdalsdkjaldj.com'));
-// getImagenPromesa().then( console.log);
+const activo = true;
 
-// Ahora utilizando async
-const getImage = async() => {
+// const mensaje = (activo) ? 'true' : false;
+// Otra forma corta como si fuera un if 
 
+const mensaje = (activo === true ) && 'Activo';
 
-    try {
-        
-        const apiKey = `63J5cK4xMY25TfnCcrJzJJn6W06Ed4Xc`;
-        const respuesta = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
-        const { data } = await respuesta.json();
-        const { url } =  data.images.original;
-    
-        const img = document.createElement('img');
-        img.src = url;
-        document.body.append(img);
-
-    } catch (error) {
-        // Manejo de error
-        console.log(error);
-    }
-
-   
-
-}
-
-// console.log(getImage());
-getImage();
-
-
-// 
-// 
-
-// peticiones.then( resp => resp.json())
-// .then( ({ data }) => { 
-//     const { url } = data.images.original;
-//     const img = document.createElement('img');
-//     img.src = url;
-//     document.body.append(img);
-//  })
-// .catch( console.log );
+console.log(mensaje);
+const funcion = () => {return true && 'Activa la funcion'};
+console.log(funcion());
